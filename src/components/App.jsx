@@ -1,16 +1,20 @@
+import { useState } from "react";
+
 export const App = () => {
+  const [count, setCount] = useState(0)
+
+  const increment = () => {
+setCount(count + 1)
+  }
+
+  const decrement = () =>{
+    setCount(count - 1)
+  }
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+    <h1>HI {count}</h1>
+    <button type="button" onClick={ () => increment()}>+1</button><button type="button" onClick={ () => decrement()}>-1</button>
     </div>
   );
 };
