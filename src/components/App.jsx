@@ -14,7 +14,8 @@ export const App = () => {
 
   return (
     <div>
-      <h1>HI {count}</h1>
+      <h1>HI {count >= 3 ? `this count = ${count}` : 'dima'}</h1>
+      <h2>{count}</h2>
       <button type="button" onClick={() => increment()}>
         +1
       </button>
@@ -22,7 +23,7 @@ export const App = () => {
         -1
       </button>
       <br />
-      <Rendering />
+      {count >= 1 ? <Rendering /> : null}
     </div>
   );
 };
