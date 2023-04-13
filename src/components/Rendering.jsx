@@ -16,6 +16,7 @@
 // }
 
 import React, { Component, Fragment } from 'react';
+import List from './List';
 
 const Tab1 = () => {
   return <h1>Text of tab1</h1>;
@@ -43,6 +44,8 @@ export default class Rendering extends Component {
   render() {
     console.log(this.state);
     const { activeTab } = this.state;
+    const { peoples } = this.props;
+
     return (
       <Fragment>
         <button data-name={1} onClick={this.handleTab}>
@@ -61,6 +64,7 @@ export default class Rendering extends Component {
         <div>{`Active tab is ${
           activeTab === 1 ? 'first' : activeTab === 2 ? 'second' : 'third'
         }`}</div>
+        <List peoples={peoples} />
       </Fragment>
     );
   }

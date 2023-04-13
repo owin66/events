@@ -12,6 +12,8 @@ export const App = () => {
     setCount(count - 1);
   };
 
+  const people = ['Jack', 'Bayonet', 'Kostya', 'Yana', 'Pasha'];
+
   return (
     <div>
       <h1>HI {count >= 3 ? `this count = ${count}` : 'dima'}</h1>
@@ -23,7 +25,7 @@ export const App = () => {
         -1
       </button>
       <br />
-      {count >= 1 ? <Rendering /> : null}
+      {count >= 1 ? <Rendering peoples={people} /> : null}
     </div>
   );
 };
