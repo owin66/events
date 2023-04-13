@@ -15,9 +15,9 @@ export const App = () => {
   const people = ['Jack', 'Bayonet', 'Kostya', 'Yana', 'Pasha'];
 
   const TABS_BTN = [
-    { dataName: 1, title: 'Tab1' },
-    { dataName: 2, title: 'Tab2' },
-    { dataName: 3, title: 'Tab3' },
+    { dataName: 1, title: 'Tab1', icon: '+' },
+    { dataName: 2, title: 'Tab2', icon: '*' },
+    { dataName: 3, title: 'Tab3', icon: '$' },
   ];
 
   return (

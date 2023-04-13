@@ -48,8 +48,9 @@ export default class Rendering extends Component {
 
     return (
       <Fragment>
-        {tabs.map(({ dataName, title }) => (
+        {tabs.map(({ dataName, title, icon }) => (
           <button key={dataName} data-name={dataName} onClick={this.handleTab}>
+            {icon}
             {title}
           </button>
         ))}
