@@ -1,12 +1,10 @@
 function List({ peoples }) {
   return (
-    <div>
-      <ul>
-        {peoples.map((person, ind) => (
-          <li key={ind}>{person}</li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {peoples.map((people, ind) => (
+        <li key={ind}>{people}</li>
+      ))}
+    </ul>
   );
 }
 

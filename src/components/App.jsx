@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Rendering from './Rendering';
+import Table from './Table';
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -21,7 +22,7 @@ export const App = () => {
   ];
 
   return (
-    <div>
+    <>
       <h1>HI {count >= 3 ? `this count = ${count}` : 'dima'}</h1>
       <h2>{count}</h2>
       <button type="button" onClick={() => increment()}>
@@ -32,6 +33,7 @@ export const App = () => {
       </button>
       <br />
       {count >= 1 ? <Rendering peoples={people} tabs={TABS_BTN} /> : null}
-    </div>
+      <Table />
+    </>
   );
 };
