@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Td } from 'styles/Table.styled';
 
 const styles = { color: 'red', textTransform: 'uppercase' };
 
@@ -6,7 +7,7 @@ function Columns() {
   return (
     <Fragment>
       <td style={styles}>Inline</td>
-      <td>Simple class</td>
+      <Td>Simple class</Td>
     </Fragment>
   );
 }
