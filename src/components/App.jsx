@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Rendering from './Rendering';
 import Table from './Table';
+import Form from './Form';
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -34,6 +35,7 @@ export const App = () => {
       <br />
       {count >= 1 ? <Rendering peoples={people} tabs={TABS_BTN} /> : null}
       <Table />
+      <Form />
     </>
   );
 };
