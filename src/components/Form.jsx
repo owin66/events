@@ -4,6 +4,10 @@ export default class Form extends Component {
   state = {
     inputText: '',
     textareaText: '',
+    showData: {
+      name: '',
+      text: '',
+    },
   };
 
   handleInputChange = ({ target: { value } }) => {
@@ -14,8 +18,22 @@ export default class Form extends Component {
     this.setState({ textareaText: value });
   };
 
-  render() {
+  handleShow = e => {
+    e.preventDefault();
     const { inputText, textareaText } = this.state;
+    this.setState({
+      inputText: '',
+      textareaText: '',
+      showData: {
+        name: inputText,
+        text: textareaText,
+      },
+    });
+  };
+
+  render() {
+    const { inputText, textareaText, showData } = this.state;
+    const { name, text } = showData;
     return (
       <>
         <form action="">
@@ -39,8 +57,10 @@ export default class Form extends Component {
           />
           <br />
           {/* button */}
-          <button>Show</button>
+          <button onClick={this.handleShow}>Show</button>
         </form>
+        <h2>{name}</h2>
+        <h3>{text}</h3>
       </>
     );
   }
