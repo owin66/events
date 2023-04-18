@@ -24,22 +24,29 @@ export default class Refs extends Component {
     },
   };
 
-  handleInputChange = ({ target: { value } }) => {
-    console.log(this.el.value);
-    this.setState({ inputText: value });
+  inputRef = React.createRef();
+  textareaRef = React.createRef();
+  selectRef = React.createRef();
+
+  handleChange = () => {
+    this.setState({
+      inputText: this.inputRef.current.value,
+      textareaText: this.textareaRef.current.value,
+      selectText: this.selectRef.current.value,
+    });
   };
 
-  handleTextareaChange = ({ target: { value } }) => {
-    this.setState({ textareaText: value });
-  };
+  //   handleInputChange = ({ target: { value } }) => {
+  //     this.setState({ inputText: value });
+  //   };
 
-  handleSelectChange = ({ target: { value } }) => {
-    this.setState({ selectText: value });
-  };
+  //   handleTextareaChange = ({ target: { value } }) => {
+  //     this.setState({ textareaText: value });
+  //   };
 
-  getRef = node => {
-    this.el = node;
-  };
+  //   handleSelectChange = ({ target: { value } }) => {
+  //     this.setState({ selectText: value });
+  //   };
 
   handleShow = e => {
     e.preventDefault();
@@ -66,23 +73,28 @@ export default class Refs extends Component {
           <label htmlFor="">
             Name:
             <input
-              ref={this.getRef}
+              ref={this.inputRef}
               type="text"
               name="name"
               value={inputText}
-              onChange={this.handleInputChange}
+              onChange={this.handleChange}
             />
           </label>
           <br />
           {/* textarea */}
           <label htmlFor="">Text:</label>
           <textarea
+            ref={this.textareaRef}
             name="text"
             value={textareaText}
-            onChange={this.handleTextareaChange}
+            onChange={this.handleChange}
           />
           {/* select */}
-          <select value={selectText} onChange={this.handleSelectChange}>
+          <select
+            ref={this.selectRef}
+            value={selectText}
+            onChange={this.handleChange}
+          >
             {POSITION.map(({ id, value, text }) => (
               <option key={id} value={value}>
                 {text}
