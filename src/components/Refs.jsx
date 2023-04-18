@@ -28,6 +28,14 @@ export default class Refs extends Component {
   textareaRef = React.createRef();
   selectRef = React.createRef();
 
+  componentDidMount() {
+    console.log(this.inputRef);
+  }
+
+  componentDidUpdate() {
+    console.log(this.textareaRef.current.value);
+  }
+
   handleChange = () => {
     this.setState({
       inputText: this.inputRef.current.value,
