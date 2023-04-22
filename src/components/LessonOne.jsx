@@ -9,7 +9,7 @@ export const LessonOne = () => {
     { dataName: 2, title: 'Tab2', icon: '*' },
     { dataName: 3, title: 'Tab3', icon: '$' },
   ];
-
+  // СОЗДАЕМ СЧЕТЧИК
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);

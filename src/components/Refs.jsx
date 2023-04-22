@@ -24,6 +24,8 @@ export default class Refs extends Component {
     },
   };
 
+  // 1.создаем рефы, они заменяфяют поиск элемента
+
   inputRef = React.createRef();
   textareaRef = React.createRef();
   selectRef = React.createRef();
@@ -37,6 +39,7 @@ export default class Refs extends Component {
   }
 
   handleChange = () => {
+    // 2.нужно достучаться до полей
     this.setState({
       inputText: this.inputRef.current.value,
       textareaText: this.textareaRef.current.value,
@@ -103,6 +106,7 @@ export default class Refs extends Component {
             value={selectText}
             onChange={this.handleChange}
           >
+            {/* РЕНДЕРИМ РАЗМЕТКУ */}
             {POSITION.map(({ id, value, text }) => (
               <option key={id} value={value}>
                 {text}

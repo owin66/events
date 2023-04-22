@@ -54,7 +54,7 @@ export default class Rendering extends Component {
             {title}
           </button>
         ))}
-
+        {/* РЕНДНЕРИМ РАЗМЕТКУ ПО УСЛОВИЮ */}
         {activeTab === 1 && <Tab1 />}
         {activeTab === 2 && <Tab2 />}
         {activeTab === 3 && <Tab3 />}
