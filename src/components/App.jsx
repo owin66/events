@@ -3,6 +3,7 @@ import Refs from './Refs';
 import HOC from './HOC';
 import { LessonOne } from './LessonOne';
 import { Fragment } from 'react';
+import Context from './Context';
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
       <Table />
       <Refs />
       <HOC />
+      <Context />
     </Fragment>
   );
 };
